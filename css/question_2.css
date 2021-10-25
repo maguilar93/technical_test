@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.container {
+  margin: auto;
+  background-color: lightgray;
+  display: flex;
+  width: 350px;
+  float: left;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80px;
+}
+
+li {
+  list-style-type: "- ";
+}
+li:nth-child(-n+4) {
+  list-style: none;
+}
+li:nth-child(-n+4)::before {
+  content: "•";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  color: red;
+}
+li:nth-child(2)::before {
+  color: pink;
+}
+li:nth-child(4) {
+  color: green;
+}
+
+.title {
+  text-transform: uppercase;
+  color: darkgray;
+}
+.title::first-letter {
+  color: blue;
+}

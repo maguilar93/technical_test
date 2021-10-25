@@ -1,0 +1,51 @@
+@mixin disc {
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+$width: 350px;
+
+.container {
+  margin: auto;
+  background-color: lightgray;
+  display: flex;
+  width: $width;
+  float: left;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 80px;
+}
+
+li {
+  list-style-type: "- ";
+
+  &:nth-child(-n + 4) {
+    list-style: none;
+
+    &::before {
+      @include disc;
+      color: red;
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      color: pink;
+    }
+  }
+
+  &:nth-child(4) {
+    color: green;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  color: darkgray;
+
+  &::first-letter {
+    color: blue;
+  }
+}

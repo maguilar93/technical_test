@@ -1,0 +1,45 @@
+$color1: #334455;
+$color2: #666;
+$color3: #999999;
+$width: 50%;
+
+.fooBar {
+  font-size: 1rem;
+  padding: 2rem;
+  border: red solid 1px;
+}
+.fooBar.big {
+  font-size: 2rem;
+  padding: 4rem;
+}
+.hello-world {
+  .col1 {
+    width: $width;
+    background: $color1;
+    color: $color2;
+    @media (max-width: 64em) {
+      width: 75%;
+      background-color: $color3;
+    }
+  }
+  .col2 {
+    width: $width;
+    color: $color1;
+    background: $color2;
+    @media (max-width: 64em) {
+      width: 25%;
+    }
+  }
+  .col1 {
+    z-index: 37;
+    position: static;
+  }
+}
+.lorem-ipsum {
+  padding: 0 2em 0 2em;
+}
+.lorem-dolor {
+  &::before {
+    color: lighten($color2, 20%);
+  }
+}
